@@ -30,12 +30,13 @@ a {
 </style>
 <script type="text/javascript">
 var t = 0;
-var absurd_situation = ["sitting on the toilet", "being strip-searched in the airport", "failing to hail a cab", "renting formal clothes", "stepping over a street pizza", "double-parking", "entering a convenience store", "watching happy-slapping videos online", "selecting produce", "burning trash", "buying lottery tickets"];
-var sad_descriptor = ["a jobless", "a forlorn", "a clumsy", "an antisocial", "a fretful", "a hirsute", "an unstylish", "a cockeyed", "an overly trusting", "an almost illiterate", "a big-boned"];
-var nationality = ["Scottish", "Thai", "Romani", "Icelandic", "Belizian", "Belgian", "Welsh", "Salvadoran", "Canadian", "Turkish", "Armenian", "Micronesian"];
-var man_or_woman = ["man", "woman", "teenager", "senior citizen"];
-var silly_character = ["a giraffe", "a robot", "a carnivorous plant", "a Deadhead", "a ninja", "Professor Snape", "a turnip", "a skyscraper", "Benjamin Franklin", "a microbe", "a pirate king"];
-var interact_with = ["do good deeds for", "interrogate", "evangelize", "wink at", "dance for", "serenade", "vigorously encourage", "wave to", "pray with", "handle snakes with", "soothe", "laugh at", "imitate"];
+var time_period = ["A second", "A minute", "An hour", "A day", "A week", "A month", "A year", "A decade", "A century", "A millennium"];
+var activity_ing = ["limping over to", "eating", "praying to", "dating", "wrestling", "babysitting", "sleeping on", "hiring", "firing"];
+var adjective = ["an overcooked", "a hairy", "a painted", "a derelict", "an emo", "a drunk", "a convicted", "wrinkled"];
+var adjective2 = ["stinky", "boring", "annoying", "expensive", "greedy", "flamboyant"];
+var noun = ["piece of pizza", "cup of coffee", "shrubbery", "post office", "teacups ride", "bottle of motor oil", "cinderblock", "soap bar", "jack-o-lantern", "banshee", "poodle", "iPhone"];
+var my = ["stomach acid", "spinal chord", "most recent fart", "urine", "eyeballs", "supply of poison", "magic 8-ball"];
+var reaction = ["delighted", "amused", "confused", "indignant", "bespectacled", "annoyed", "embarrassed", "happy", "excited", "jealous", "intrigued", "hungry", "frustrated"];
 function rand_range(max) {
     "use strict";
     return Math.floor(Math.random() * (max + 1));
@@ -50,14 +51,15 @@ function fresh(array) {
 function story() {
     "use strict";
     var last, lede, main = document.getElementById('main');
-    if (t <= 12) {
+    if (t <= 20) {
         t += 1;
     } else {
         main.removeChild(document.getElementById('main').firstChild);
     }
     last = document.createElement('div');
     last.appendChild(document.createElement('br'));
-    lede = "While " + fresh(absurd_situation) + ", " + fresh(sad_descriptor) + " " + fresh(nationality) + " " + fresh(man_or_woman) + " had an idea: Why not dress as " + fresh(silly_character) + " and " + fresh(interact_with) + " people?";
+    lede = fresh(time_period) + " ago, I was " + fresh(activity_ing) + " " + fresh(adjective) + " and " + fresh(adjective2) + " " + fresh(noun) + ", when I realized that my " + fresh(my) + " had come to life! I was " + fresh(reaction) + ".";
+    //lede = ""While " + fresh(absurd_situation) + ", " + fresh(sad_descriptor) + " " + fresh(nationality) + " " + fresh(man_or_woman) + " had an idea: Why not dress as " + fresh(silly_character) + " and " + fresh(interact_with) + " people?"";
     last.appendChild(document.createTextNode(lede));
     main.appendChild(last);
 }
@@ -75,3 +77,5 @@ function produce_stories() {
 <div id="main"></div>
 </body>
 </html>
+
+
